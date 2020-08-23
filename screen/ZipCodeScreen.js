@@ -53,10 +53,10 @@ const styles = StyleSheet.create({
     },
     zipPlace: {
         flex: 1,
-        fontSize: 18,
+        fontSize: 22,
     },
     zipCode: {
         flex: 1,
-        fontSize: 14
+        fontSize: 16
     },
 })
