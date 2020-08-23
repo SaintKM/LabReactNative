@@ -1,12 +1,17 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { Text, View , StyleSheet } from 'react-native'
 export default function Forecast(props){
     return (
-        <View>
+        <View style={style.backdrop}>
             <Text>{props.main}</Text>
             <Text>{props.description}</Text>
-            <Text>{props.temp}</Text>
-            <Text>°C</Text>
+            <Text>{props.temp}°C</Text>
         </View>
     )
 }
+
+const style = StyleSheet.create({
+    backdrop: {
+        fontSize: 20000
+    }
+})
