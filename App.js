@@ -3,6 +3,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import ZipCodeScreen from './screen/ZipCodeScreen';
 import WeatherScreen from './screen/WeatherScreen';
+import { StyleSheet, StatusBar, View } from 'react-native';
+import Constants from 'expo-constants';
 
 const Stack = createStackNavigator()
 
@@ -16,3 +18,9 @@ export default function App() {
     </NavigationContainer>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    paddingTop: Constants.statusBarHeight
+  },
+})

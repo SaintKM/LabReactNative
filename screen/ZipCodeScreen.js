@@ -1,5 +1,5 @@
 import React from 'react'
-import { FlatList, View, Text, StyleSheet, ImageBackground } from 'react-native'
+import { FlatList, View, Text, StyleSheet } from 'react-native'
 import { TouchableHighlight } from 'react-native-gesture-handler'
 import { useNavigation } from '@react-navigation/native'
 
@@ -15,12 +15,10 @@ const ZipItem = ({place, code, navigation}) => (
     <TouchableHighlight onPress={() => {
         navigation.navigate('Weather', {zipCode: code})
     }}>
-        <ImageBackground source={require('../mahjong_soul_bg.jpg')} style={styles.backdrop}>
-            <View style={styles.zipItem}>
-                <Text style={styles.zipPlace}>{place}</Text>
-                <Text style={styles.zipCode}>Zip Code : {code}</Text>
-            </View>
-        </ImageBackground>
+        <View style={styles.zipItem}>
+            <Text style={styles.zipPlace}>{place}</Text>
+            <Text style={styles.zipCode}>Zip Code : {code}</Text>
+        </View>
     </TouchableHighlight>
 )
 export default function ZipCodeScreen(){
@@ -32,18 +30,11 @@ export default function ZipCodeScreen(){
             keyExtractor = {item => item.code}
             renderItem = {({item}) => <ZipItem {...item} navigation={navigation}/>}
         />
+        
     )
 }
 
 const styles = StyleSheet.create({
-    backdrop: {
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        width: '100%',
-        height: '100%'
-    },
     zipItem: {
         flex: 1,
         flexDirection: 'row',
